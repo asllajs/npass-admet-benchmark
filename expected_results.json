@@ -1,0 +1,648 @@
+{
+ "_meta": {
+  "data": "10.5281/zenodo.22885507 plus data/benchmark_publication_status.csv, tracked in this repository",
+  "description": "The quantitative claims of the manuscript, written down so the test suite can check them. Every value here is a number that appears in the paper (main text, Tables 1-7 or Tables S1-S9) or is the unrounded value behind one of them. Tolerances live in the test files next to the assertion they belong to.",
+  "generated_with": "run_all.py; see output/results.json for the values a given machine produces",
+  "manuscript": "Benchmarking the mutual agreement and experimental Caco-2 accuracy of three modern ADMET predictors across natural products"
+ },
+ "applicability_domain": {
+  "frac_below_cutoff": {
+   "drug-like held out": 0.11,
+   "natural products": 0.269
+  },
+  "mannwhitney_p": 9.3e-14,
+  "median_nn_tanimoto": {
+   "drug-like held out": 0.774,
+   "natural products": 0.394
+  },
+  "min_spearman_p_abserr_vs_nn": 0.339,
+  "spearman_abserr_vs_nn": {
+   "ADMET-AI": -0.054,
+   "ADMETlab 3.0": 0.083,
+   "admetSAR 3.0": -0.056
+  }
+ },
+ "benchmark_context": {
+  "descriptor_signal_matches": {
+   "benchmark (all)": 5,
+   "benchmark, in published tables": 6,
+   "benchmark, not in published tables": 2,
+   "drug-like (Wang 2016)": 6
+  },
+  "descriptor_signal_n_with_prior": 6,
+  "min_fisher_z_p_between_halves": 0.006,
+  "monolayer_integrity": {
+   "auroc_range": [
+    0.54,
+    0.62
+   ],
+   "composition_at_-20": {
+    "dropped": {
+     "median_measured_log": -5.17,
+     "median_mw": 338.0,
+     "n": 47
+    },
+    "kept": {
+     "median_measured_log": -5.0,
+     "median_mw": 308.0,
+     "n": 87
+    }
+   },
+   "descriptor_signs": {
+    "-10": 6,
+    "-20": 6,
+    "-30": 6,
+    "-50": 6,
+    "none": 5
+   },
+   "min_p_at_-10": 0.017,
+   "min_p_at_-20": 0.035,
+   "n_kept": {
+    "-10": 67,
+    "-20": 87,
+    "-30": 96,
+    "-50": 110,
+    "none": 134
+   },
+   "pearson_r_at_-10": {
+    "ADMET-AI": 0.194,
+    "ADMETlab 3.0": 0.199,
+    "admetSAR 3.0": 0.299
+   },
+   "pearson_r_at_-20": {
+    "ADMET-AI": 0.135,
+    "ADMETlab 3.0": 0.158,
+    "admetSAR 3.0": 0.237
+   },
+   "r2_range": [
+    -3.19,
+    -1.5
+   ]
+  },
+  "publication_status_sources": [
+   "Cong et al. 2026",
+   "Kim et al. 2026",
+   "Lee et al. 2025"
+  ],
+  "representativeness": {
+   "FractionCSP3": {
+    "benchmark_median": 0.33,
+    "library_frac_in_range": 0.694,
+    "library_median": 0.61
+   },
+   "MolLogP": {
+    "benchmark_median": 2.16,
+    "library_frac_in_range": 0.773,
+    "library_median": 3.09
+   },
+   "MolWt": {
+    "benchmark_median": 318.84,
+    "library_frac_in_range": 0.873,
+    "library_median": 414.37
+   },
+   "NumHAcceptors": {
+    "benchmark_median": 5.0,
+    "library_frac_in_range": 0.896,
+    "library_median": 6.0
+   },
+   "NumHDonors": {
+    "benchmark_median": 2.0,
+    "library_frac_in_range": 0.908,
+    "library_median": 2.0
+   },
+   "NumRotatableBonds": {
+    "benchmark_median": 3.0,
+    "library_frac_in_range": 0.798,
+    "library_median": 5.0
+   },
+   "RingCount": {
+    "benchmark_median": 3.0,
+    "library_frac_in_range": 0.895,
+    "library_median": 3.0
+   },
+   "TPSA": {
+    "benchmark_median": 74.6,
+    "library_frac_in_range": 0.835,
+    "library_median": 92.18
+   }
+  },
+  "subset_heterogeneity": {
+   "not tabulated there | ADMET-AI": {
+    "n": 32,
+    "r": -0.073
+   },
+   "not tabulated there | ADMETlab 3.0": {
+    "n": 34,
+    "r": -0.263
+   },
+   "not tabulated there | admetSAR 3.0": {
+    "n": 28,
+    "r": -0.369
+   },
+   "tabulated in a source publication | ADMET-AI": {
+    "n": 99,
+    "r": 0.113
+   },
+   "tabulated in a source publication | ADMETlab 3.0": {
+    "n": 100,
+    "r": 0.137
+   },
+   "tabulated in a source publication | admetSAR 3.0": {
+    "n": 91,
+    "r": 0.226
+   }
+  },
+  "tautomers": {
+   "median_count": 3.0,
+   "min_mannwhitney_p": 0.553,
+   "n_canonical_differs": 39,
+   "n_compounds": 134,
+   "n_with_multiple": 93
+  }
+ },
+ "benchmark_provenance": {
+  "_note": "Every compound is catalogued in NPASS 3.0 once counter-ions are stripped. Salts are counted because those compounds were submitted to the tools with their counter-ion present.",
+  "n_compounds": 142,
+  "n_in_npass_after_desalting": 142,
+  "n_salt_forms": 16,
+  "n_unclassified_pathway": 4,
+  "n_with_papp": 134
+ },
+ "caco2_validation": {
+  "ADMET-AI": {
+   "auroc": 0.589,
+   "ba_bias": -0.094,
+   "ba_loa": 1.91,
+   "ccc": 0.072,
+   "mae": 0.707,
+   "mcc": 0.089,
+   "n": 131,
+   "n_permeable": 78,
+   "pearson_ci": [
+    -0.09,
+    0.26
+   ],
+   "pearson_p": 0.35,
+   "pearson_r": 0.082,
+   "r2": -2.588,
+   "rmse": 0.979,
+   "spearman": 0.175
+  },
+  "ADMETlab 3.0": {
+   "auroc": 0.539,
+   "ba_bias": -0.092,
+   "ba_loa": 1.604,
+   "ccc": 0.045,
+   "mae": 0.607,
+   "mcc": 0.039,
+   "n": 134,
+   "n_permeable": 79,
+   "pearson_ci": [
+    -0.14,
+    0.24
+   ],
+   "pearson_p": 0.588,
+   "pearson_r": 0.047,
+   "r2": -1.497,
+   "rmse": 0.823,
+   "spearman": 0.085
+  },
+  "_bootstrap_note": "The 95% confidence intervals are percentile bootstrap estimates (2,000 replicates, seed 42). Redrawing the replicates moves an interval bound by up to about 0.02, so they are checked at a correspondingly looser tolerance than the point estimates.",
+  "admetSAR 3.0": {
+   "auroc": 0.61,
+   "ba_bias": -0.084,
+   "ba_loa": 1.894,
+   "ccc": 0.086,
+   "mae": 0.74,
+   "mcc": 0.107,
+   "n": 119,
+   "n_permeable": 71,
+   "pearson_ci": [
+    -0.12,
+    0.3
+   ],
+   "pearson_p": 0.291,
+   "pearson_r": 0.098,
+   "r2": -2.404,
+   "rmse": 0.97,
+   "spearman": 0.131
+  },
+  "pearson_ci_upper_max": 0.34
+ },
+ "chemical_space": {
+  "explained_variance_pc1": 0.701,
+  "explained_variance_pc1_pc2": 0.896,
+  "explained_variance_pc2": 0.196,
+  "median_fsp3": {
+   "Alkaloids": 0.47,
+   "Amino acids and Peptides": 0.61,
+   "Carbohydrates": 0.83,
+   "Fatty acids": 0.8,
+   "Polyketides": 0.5,
+   "Shikimates and Phenylpropanoids": 0.3,
+   "Terpenoids": 0.77
+  },
+  "n_by_pathway": {
+   "Alkaloids": 28436,
+   "Amino acids and Peptides": 11596,
+   "Carbohydrates": 2548,
+   "Fatty acids": 13119,
+   "Polyketides": 26925,
+   "Shikimates and Phenylpropanoids": 34729,
+   "Terpenoids": 77745
+  },
+  "n_compounds": 195098,
+  "n_pathways": 7
+ },
+ "class_stratified": {
+  "caco2_agreement_by_pathway": {
+   "Alkaloids": 0.62,
+   "Amino acids and Peptides": 0.22,
+   "Carbohydrates": 0.41,
+   "Fatty acids": 0.57,
+   "Polyketides": 0.57,
+   "Shikimates and Phenylpropanoids": 0.83,
+   "Terpenoids": 0.78
+  },
+  "kruskal_absolute_error_p": {
+   "ADMET-AI": 0.541,
+   "ADMETlab 3.0": 0.101,
+   "admetSAR 3.0": 0.206
+  },
+  "median_abs_err_range": [
+   0.18,
+   0.63
+  ],
+  "pathways_tested_accuracy": [
+   "Alkaloids",
+   "Polyketides",
+   "Shikimates and Phenylpropanoids",
+   "Terpenoids"
+  ]
+ },
+ "consensus": {
+  "best_single_r": 0.111,
+  "consensus_beats_best_single": false,
+  "inter_tool_r": {
+   "ADMET-AI vs ADMETlab 3.0": 0.872,
+   "ADMET-AI vs admetSAR 3.0": 0.873,
+   "ADMETlab 3.0 vs admetSAR 3.0": 0.893
+  },
+  "mean_inter_tool_r": 0.879,
+  "n_complete_case": 116,
+  "pearson_ci": {
+   "ADMET-AI": [
+    -0.11,
+    0.3
+   ],
+   "ADMETlab 3.0": [
+    -0.15,
+    0.27
+   ],
+   "Consensus (mean)": [
+    -0.11,
+    0.3
+   ],
+   "Consensus (median)": [
+    -0.1,
+    0.31
+   ],
+   "admetSAR 3.0": [
+    -0.12,
+    0.32
+   ]
+  },
+  "vs_measured_r": {
+   "ADMET-AI": 0.087,
+   "ADMETlab 3.0": 0.058,
+   "Consensus (mean)": 0.091,
+   "Consensus (median)": 0.108,
+   "admetSAR 3.0": 0.111
+  }
+ },
+ "crosswalk": {
+  "categories": {
+   "A": 8,
+   "D": 3,
+   "E": 2,
+   "M": 9,
+   "P": 7,
+   "T": 4
+  },
+  "n_canonical_endpoints": 33,
+  "n_comparable_multi_source": 30,
+  "n_native_mappings": 91,
+  "not_comparable_endpoints": [
+   "clearance",
+   "ld50",
+   "t_half"
+  ]
+ },
+ "domain_split": {
+  "chemspace_overlap": {
+   "NPASS 3.0 library": {
+    "frac_below_0.30": 0.697,
+    "median_nn": 0.245
+   },
+   "benchmark (measured)": {
+    "frac_below_0.30": 0.269,
+    "median_nn": 0.394
+   },
+   "drug-like held out": {
+    "frac_below_0.30": 0.11,
+    "median_nn": 0.774
+   }
+  },
+  "cutoff": 0.3,
+  "fisher_z_p": {
+   "ADMET-AI": 0.335,
+   "ADMETlab 3.0": 0.299,
+   "admetSAR 3.0": 0.212
+  },
+  "mae_by_quintile": {
+   "ADMET-AI": [
+    0.873,
+    0.646,
+    0.706,
+    0.568,
+    0.73
+   ],
+   "ADMETlab 3.0": [
+    0.579,
+    0.608,
+    0.514,
+    0.572,
+    0.758
+   ],
+   "admetSAR 3.0": [
+    0.828,
+    0.715,
+    0.662,
+    0.687,
+    0.802
+   ]
+  },
+  "max_abs_spearman_err_vs_nn": 0.083,
+  "max_r_in_any_cutoff": 0.231,
+  "min_p_err_vs_nn": 0.339,
+  "n_cutoffs_tested": 5,
+  "n_in_domain": 98,
+  "n_out_of_domain": 36,
+  "n_significant_r_in_across_cutoffs": 2,
+  "pathway_median_nn": {
+   "Alkaloids": 0.45,
+   "Amino acids and Peptides": 0.28,
+   "Polyketides": 0.32,
+   "Shikimates and Phenylpropanoids": 0.45,
+   "Terpenoids": 0.3
+  },
+  "pearson_r_in": {
+   "ADMET-AI": 0.149,
+   "ADMETlab 3.0": 0.102,
+   "admetSAR 3.0": 0.177
+  },
+  "pearson_r_out": {
+   "ADMET-AI": -0.052,
+   "ADMETlab 3.0": -0.107,
+   "admetSAR 3.0": -0.089
+  }
+ },
+ "efflux_pgp": {
+  "ADMETlab 3.0": {
+   "auroc": 0.47,
+   "n": 131,
+   "n_efflux_positive": 15
+  },
+  "admetSAR 3.0": {
+   "auroc": 0.46,
+   "n": 116,
+   "n_efflux_positive": 12
+  }
+ },
+ "experimental_dataset": {
+  "_note": "Natural products with measured Caco-2 transport data. Natural-product status is checkable against NPASS 3.0 once counter-ions are stripped.",
+  "n_compounds": 142,
+  "n_with_efflux_ratio": 131,
+  "n_with_papp": 134
+ },
+ "generalization": {
+  "descriptor": {
+   "drug_like_random_cv_auroc": 0.919,
+   "drug_like_random_cv_r2": 0.72,
+   "drug_like_scaffold_cv_auroc": 0.862,
+   "drug_like_scaffold_cv_r2": 0.58,
+   "drug_like_transfer_auroc": 0.564,
+   "drug_like_transfer_r2": -2.005,
+   "np_transfer_to_drug_like": {
+    "auroc": 0.623,
+    "r": 0.191,
+    "r2": 0.029
+   }
+  },
+  "learning_curve_at_134": {
+   "pearson_r_mean": 0.647,
+   "r2_mean": 0.369
+  },
+  "morgan": {
+   "drug_like_random_cv": {
+    "auroc": 0.913,
+    "r": 0.853,
+    "r2": 0.721
+   },
+   "drug_like_scaffold_cv": {
+    "auroc": 0.834,
+    "r": 0.763,
+    "r2": 0.566
+   },
+   "drug_like_transfer": {
+    "auroc": 0.511,
+    "r": 0.038,
+    "r2": -1.851
+   },
+   "np_random_cv_auroc": 0.52,
+   "np_random_cv_r2": -0.098,
+   "np_scaffold_cv_auroc": 0.473,
+   "np_scaffold_cv_r2": -0.098,
+   "np_transfer_to_drug_like": {
+    "auroc": 0.495,
+    "r": -0.027,
+    "r2": -0.071
+   }
+  },
+  "scaffold_counts": {
+   "benchmark_n": 134,
+   "benchmark_on_a_drug_like_scaffold": 47,
+   "benchmark_scaffolds": 98,
+   "drug_like_n": 1272,
+   "drug_like_scaffolds": 576,
+   "shared_scaffolds": 21
+  }
+ },
+ "inter_tool_agreement": {
+  "deterministic_descriptor_min_ccc": 0.99,
+  "n_complete_case_all_three": 187388,
+  "threeway": {
+   "ames": 0.27,
+   "bbb": 0.253,
+   "caco2": 0.59,
+   "clearance": 0.025,
+   "cyp1a2_inh": 0.625,
+   "cyp2c19_inh": 0.47,
+   "cyp2c9_inh": 0.439,
+   "cyp2c9_sub": -0.032,
+   "cyp2d6_inh": 0.288,
+   "cyp2d6_sub": 0.162,
+   "cyp3a4_inh": 0.195,
+   "cyp3a4_sub": 0.251,
+   "dili": 0.222,
+   "f20": 0.2,
+   "f30": 0.192,
+   "f50": 0.169,
+   "hba": 0.959,
+   "hbd": 0.997,
+   "herg": 0.27,
+   "hia": 0.503,
+   "hlm": 0.195,
+   "ld50": 0.014,
+   "logp": 0.844,
+   "logs": 0.789,
+   "mw": 0.999,
+   "pampa": 0.411,
+   "pgp_inhibitor": 0.362,
+   "pgp_substrate": 0.367,
+   "ppb": 0.769,
+   "qed": 0.999,
+   "t_half": 0.145,
+   "tpsa": 0.999,
+   "vdss": 0.252
+  }
+ },
+ "library_coverage": {
+  "coverage_pct": {
+   "admet_ai": 99.99,
+   "admetlab3": 94.55,
+   "admetsar3": 98.17
+  },
+  "n_all_three": 187388,
+  "n_compounds": 201905,
+  "n_no_tool": 0,
+  "n_unique_inchikey": 201905,
+  "pct_all_three": 92.81
+ },
+ "mw_confound": {
+  "ADMET-AI": {
+   "p_max": 0.005,
+   "spearman": 0.257
+  },
+  "ADMETlab 3.0": {
+   "p_max": 0.005,
+   "spearman": 0.245
+  },
+  "admetSAR 3.0": {
+   "p_max": 0.005,
+   "spearman": 0.283
+  },
+  "measured log Papp vs MW": {
+   "p_max": 0.006,
+   "spearman": -0.241
+  }
+ },
+ "mw_stratified": {
+  "max_abs_r_any_quartile": 0.283,
+  "min_p_any_quartile": 0.111,
+  "n_heavy": 22,
+  "n_light": 112,
+  "partial_spearman": {
+   "ADMET-AI": {
+    "p_partial": 0.66,
+    "p_raw": 0.045,
+    "partial": 0.039,
+    "raw": 0.175
+   },
+   "ADMETlab 3.0": {
+    "p_partial": 0.649,
+    "p_raw": 0.331,
+    "partial": -0.04,
+    "raw": 0.085
+   },
+   "admetSAR 3.0": {
+    "p_partial": 0.915,
+    "p_raw": 0.156,
+    "partial": 0.01,
+    "raw": 0.131
+   }
+  },
+  "pearson_p_light": {
+   "ADMET-AI": 0.674,
+   "ADMETlab 3.0": 0.989,
+   "admetSAR 3.0": 0.474
+  },
+  "pearson_r_heavy": {
+   "ADMET-AI": -0.286,
+   "ADMETlab 3.0": -0.118,
+   "admetSAR 3.0": -0.283
+  },
+  "pearson_r_light": {
+   "ADMET-AI": 0.04,
+   "ADMETlab 3.0": -0.001,
+   "admetSAR 3.0": 0.072
+  },
+  "split_da": 500.0
+ },
+ "replicate_reanalysis": {
+  "frac_rows_zero": 0.367,
+  "log_scale": {
+   "between_compound_sd": 0.508,
+   "max_achievable_r2_row_level": 0.959,
+   "n_compounds": 41,
+   "n_rows": 122,
+   "within_compound_sd": 0.064
+  },
+  "n_compounds": 83,
+  "n_compounds_all_zero": 30,
+  "n_rows": 248,
+  "n_rows_zero": 91,
+  "note": "Structures resolve for 45 of the 83 compounds, so the protocols below are computed on 134 of the 248 rows on the raw scale and 122 rows for 41 compounds on the log scale.",
+  "protocols": {
+   "compound-level random CV": {
+    "r": 0.25,
+    "r2": -0.082
+   },
+   "compound-level scaffold CV": {
+    "r": 0.317,
+    "r2": -0.056
+   },
+   "raw scale, compound-level random CV": {
+    "r": 0.423,
+    "r2": 0.113
+   },
+   "raw scale, row-level random CV": {
+    "r": 0.965,
+    "r2": 0.916
+   },
+   "row-level random CV": {
+    "r": 0.887,
+    "r2": 0.772
+   }
+  },
+  "raw_scale": {
+   "between_compound_sd": 1.4876e-05,
+   "max_achievable_r2_row_level": 0.982,
+   "n_compounds": 45,
+   "n_rows": 134,
+   "within_compound_sd": 9.918e-07
+  }
+ },
+ "wang_positive_control": {
+  "all": {
+   "n": 1272,
+   "pearson_r": 0.897,
+   "r2": 0.803
+  },
+  "test": {
+   "n": 255,
+   "pearson_r": 0.895,
+   "r2": 0.8
+  }
+ }
+}

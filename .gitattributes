@@ -1,0 +1,7 @@
+# Normalise line endings: LF in the repository, native in the working copy.
+* text=auto
+
+# Keep these binary-safe / exact
+*.png binary
+*.csv text eol=lf
+*.json text eol=lf
